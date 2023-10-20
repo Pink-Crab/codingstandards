@@ -1,0 +1,39 @@
+{
+    "name": "pinkcrab/coding-standards",
+    "description": "Custom set of phpcs rules for PinkCrab",
+    "type": "phpcodesniffer-standard",
+    "keywords": ["compatibility", "phpcs", "standards"],
+    "homepage": "https://github.com/Pink-Crab/codingstandards",
+    "license": "LGPL-3.0-or-later",
+    "authors": [{
+            "name": "Glynn Quelch",
+            "homepage": "https://github.com/gin0115"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/Pink-Crab/codingstandards/graphs/contributors"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Pink-Crab/codingstandards/issues",
+        "source": "https://github.com/Pink-Crab/codingstandards"
+    },
+    "require": {
+        "php": ">=5.3",
+        "squizlabs/php_codesniffer": "^2.3 || ^3.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5 || ^5.0 || ^6.0 || ^7.0"
+    },
+    "conflict": {
+        "squizlabs/php_codesniffer": "2.6.2"
+    },
+    "suggest": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically.",
+        "roave/security-advisories": "dev-master || Helps prevent installing dependencies with known security issues."
+    },
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ../../..",
+        "post-update-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ../../.."
+    }
+}
